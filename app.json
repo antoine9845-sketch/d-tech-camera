@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "다움테크카메라",
+    "slug": "d-tech-camera",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.kydtech.camera",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "buildToolsVersion": "34.0.0",
+      "compileSdkVersion": 34,
+      "minSdkVersion": 24,
+      "targetSdkVersion": 34
+    },
+    "web": {
+      "favicon": "./assets/icons/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "카메라 권한이 필요합니다: 사진 촬영을 위해"
+        }
+      ],
+      "expo-notifications"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e10ae160-39a8-4e51-b3b7-07eff69dbf82"
+      }
+    },
+    "owner": "tutelle98"
+  }
+}

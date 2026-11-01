@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnp/
+yarn.lock
+p-lock-lock.yaml
+
+# Expo
+.expo/
+
+# Android
+android/app/google-services.json
+android/**/google-services.gradle
+android/**/google-services.auto.gradle
+google-services.json
+
+# EAS
+.eas/
+
+# Environment
+.env
+
+# Build artifacts
+android/build/
+android/.gradle/
+android/app/build/
+ios/build/
+ios/.gradle/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.s3
+
+# Splash screen
+.splash-screen/# Android backup (for EAS prebuild)

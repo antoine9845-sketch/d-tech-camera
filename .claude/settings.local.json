@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Content)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Set-Location *)",
+      "PowerShell(eas login *)",
+      "PowerShell(eas build *)",
+      "PowerShell(EAS_NO_VCS=1 eas build --platform android --profile debug)",
+      "PowerShell(eas init *)",
+      "PowerShell(eas build:list *)",
+      "PowerShell(node -v)",
+      "PowerShell(npm *)",
+      "PowerShell(eas *)",
+      "PowerShell(Out-File *)",
+      "PowerShell(cmd /C \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && npx expo-doctor > C:\\\\expo-doctor-output.txt 2>&1\")",
+      "PowerShell(cmd /c \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && npx expo-doctor\")",
+      "PowerShell(Get-Command *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" -e \"require\\('child_process'\\).execSync\\('npx expo-doctor', {stdio: 'pipe'}\\)\")",
+      "PowerShell(cmd /c \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && npx expo-doctor > C:\\\\tmp\\\\expo-doctor-full.txt 2>&1\")",
+      "PowerShell(cmd /c \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && npx expo install --check\")",
+      "PowerShell(cmd /k \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && npx expo install --check\")",
+      "PowerShell(Tail *)",
+      "PowerShell(cmd /c \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && git init\")",
+      "PowerShell(& \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\" init \"C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕 화면\\\\omniroute-claude\")",
+      "PowerShell(ls \"C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕 화면\\\\omniroute-claude\\\\node_modules\\\\\" | Select-Object Name | Sort-Object Name | Select-Object -First 20)",
+      "PowerShell(cmd /c \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claude && dir /b node_modules | findstr expo-camera\")",
+      "PowerShell(cmd /k \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claube && npx expo install expo-camera@~15.0.0 expo-file-system@~17.0.0 expo-notifications@~0.28.0\")",
+      "PowerShell(& \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" -e \"require\\('child_process'\\).execSync\\('npx expo install expo-camera@~15.0.0 expo-file-system@~17.0.0 expo-notifications@~0.28.0', {stdio: 'pipe'}\\)\")",
+      "PowerShell(Move-Item *)",
+      "Bash(git *)"
+    ]
+  }
+}
