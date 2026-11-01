@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useState, useRef } from "react";
-import { StatusBar, ActivityIndicator, Alert, View } from "react-native";
+import { StyleSheet, StatusBar, ActivityIndicator, Alert, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { GestureHandlerRootView } from "react-native-gesture-handler";

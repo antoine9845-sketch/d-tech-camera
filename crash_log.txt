@@ -1,0 +1,62 @@
+﻿--------- beginning of main
+11-01 17:56:28.911 30338 30374 E ReactNativeJS: ReferenceError: Property 'StyleSheet' doesn't exist, js engine: hermes
+11-01 17:56:28.911 30338 30374 I ReactNativeJS: Running "main
+11-01 17:56:28.911 30338 30374 E ReactNativeJS: Invariant Violation: "main" has not been registered. This can happen if:
+11-01 17:56:28.911 30338 30374 E ReactNativeJS: * Metro (the local dev server) is run from the wrong folder. Check if Metro is running, stop it and restart it in the current project.
+11-01 17:56:28.911 30338 30374 E ReactNativeJS: * A module failed to load due to an error and `AppRegistry.registerComponent` wasn't called., js engine: hermes
+--------- beginning of crash
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: FATAL EXCEPTION: mqt_native_modules
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: Process: com.kydtech.camera, PID: 30338
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: com.facebook.react.common.JavascriptException: ReferenceError: Property 'StyleSheet' doesn't exist, js engine: hermes, stack:
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: anonymous@1:687769
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: loadModuleImplementation@1:34789
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: guardedLoadModule@1:34319
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: metroRequire@1:33949
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: anonymous@1:40803
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: loadModuleImplementation@1:34789
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: guardedLoadModule@1:34276
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: metroRequire@1:33949
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: global@1:33477
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at com.facebook.react.modules.core.ExceptionsManagerModule.reportException(ExceptionsManagerModule.java:65)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at com.facebook.react.bridge.JavaMethodWrapper.invoke(JavaMethodWrapper.java:372)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at com.facebook.react.bridge.JavaModuleWrapper.invoke(JavaModuleWrapper.java:146)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at com.facebook.jni.NativeRunnable.run(Native Method)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadHandler.dispatchMessage(MessageQueueThreadHandler.java:27)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:257)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:342)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$4.run(MessageQueueThreadImpl.java:233)
+11-01 17:56:28.929 30338 30375 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1571)
+11-01 17:56:36.096 30459 30495 E ReactNativeJS: ReferenceError: Property 'StyleSheet' doesn't exist, js engine: hermes
+11-01 17:56:36.097 30459 30495 I ReactNativeJS: Running "main
+11-01 17:56:36.097 30459 30495 E ReactNativeJS: Invariant Violation: "main" has not been registered. This can happen if:
+11-01 17:56:36.097 30459 30495 E ReactNativeJS: * Metro (the local dev server) is run from the wrong folder. Check if Metro is running, stop it and restart it in the current project.
+11-01 17:56:36.097 30459 30495 E ReactNativeJS: * A module failed to load due to an error and `AppRegistry.registerComponent` wasn't called., js engine: hermes
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: FATAL EXCEPTION: mqt_native_modules
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: Process: com.kydtech.camera, PID: 30459
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: com.facebook.react.common.JavascriptException: ReferenceError: Property 'StyleSheet' doesn't exist, js engine: hermes, stack:
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: anonymous@1:687769
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: loadModuleImplementation@1:34789
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: guardedLoadModule@1:34319
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: metroRequire@1:33949
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: anonymous@1:40803
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: loadModuleImplementation@1:34789
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: guardedLoadModule@1:34276
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: metroRequire@1:33949
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: global@1:33477
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at com.facebook.react.modules.core.ExceptionsManagerModule.reportException(ExceptionsManagerModule.java:65)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at com.facebook.react.bridge.JavaMethodWrapper.invoke(JavaMethodWrapper.java:372)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at com.facebook.react.bridge.JavaModuleWrapper.invoke(JavaModuleWrapper.java:146)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at com.facebook.jni.NativeRunnable.run(Native Method)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadHandler.dispatchMessage(MessageQueueThreadHandler.java:27)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:257)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:342)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$4.run(MessageQueueThreadImpl.java:233)
+11-01 17:56:36.098 30459 30496 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1571)
