@@ -19,11 +19,7 @@
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.POST_NOTIFICATIONS",
         "android.permission.RECORD_AUDIO"
-      ],
-      "buildToolsVersion": "34.0.0",
-      "compileSdkVersion": 34,
-      "minSdkVersion": 24,
-      "targetSdkVersion": 34
+      ]
     },
     "web": {
       "favicon": "./assets/icons/favicon.png"
@@ -35,7 +31,18 @@
           "cameraPermission": "카메라 권한이 필요합니다: 사진 촬영을 위해"
         }
       ],
-      "expo-notifications"
+      "expo-notifications",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildToolsVersion": "34.0.0",
+            "compileSdkVersion": 34,
+            "minSdkVersion": 24,
+            "targetSdkVersion": 34
+          }
+        }
+      ]
     ],
     "extra": {
       "eas": {

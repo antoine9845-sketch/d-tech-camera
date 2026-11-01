@@ -28,7 +28,10 @@
       "PowerShell(cmd /k \"cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕\\\\화면\\\\omniroute-claube && npx expo install expo-camera@~15.0.0 expo-file-system@~17.0.0 expo-notifications@~0.28.0\")",
       "PowerShell(& \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" -e \"require\\('child_process'\\).execSync\\('npx expo install expo-camera@~15.0.0 expo-file-system@~17.0.0 expo-notifications@~0.28.0', {stdio: 'pipe'}\\)\")",
       "PowerShell(Move-Item *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(eas build *)",
+      "Bash(cd C:\\\\Users\\\\tkdal\\\\OneDrive\\\\바탕 화면\\\\omniroute-claude\\\\android_backup)",
+      "Bash(./gradlew assembleDebug)"
     ]
   }
 }
