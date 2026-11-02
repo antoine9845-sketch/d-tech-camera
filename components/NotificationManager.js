@@ -12,21 +12,25 @@ export default function NotificationManager({ onNotificationPress }) {
   const notificationListener = useRef();
   const responseListener = useRef();
 
-  // 알림 채널 등록
+  // 알림 채널 등록 - 안전하게 처리
   useEffect(() => {
     const registerNotificationChannel = async () => {
-      await Notifications.setNotificationChannelAsync("camera-action", {
-        name: "카메라 촬영",
-        importance: Notifications.AndroidImportance.HIGH,
-        vibrationPattern: [0, 250, 250, 250],
-        lightColor: "#FF6B00",
-        showBadge: true,
-      });
+      try {
+        await Notifications.setNotificationChannelAsync("camera-action", {
+          name: "카메라 촬영",
+          importance: Notifications.AndroidImportance.HIGH,
+          vibrationPattern: [0, 250, 250, 250],
+          lightColor: "#FF6B00",
+          showBadge: true,
+        });
+      } catch (error) {
+        console.warn("알림 채널 등록 실패 (무시됨):", error);
+      }
     };
     registerNotificationChannel();
   }, []);
 
-  // 수신 알림 리스너
+  // 수신 알림 리스너 - 안전하게 정리
   useEffect(() => {
     notificationListener.current = Notifications.addNotificationReceivedListener(
       (notification) => {
@@ -46,16 +50,8 @@ export default function NotificationManager({ onNotificationPress }) {
     );
 
     return () => {
-      if (notificationListener.current) {
-        Notifications.removeNotificationSubscription(
-          notificationListener.current
-        );
-      }
-      if (responseListener.current) {
-        Notifications.removeNotificationSubscription(
-          responseListener.current
-        );
-      }
+      notificationListener.current?.remove?.();
+      responseListener.current?.remove?.();
     };
   }, [onNotificationPress]);
 

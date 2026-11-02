@@ -13,6 +13,7 @@ import * as Notifications from "expo-notifications";
 import * as FileSystem from "expo-file-system";
 import { Camera } from "expo-camera";
 import { AppState } from "react-native";
+import { SAVE_DIRECTORY } from "./lib/InspectionItems";
 
 // Components
 import NotificationManager from "./components/NotificationManager";
@@ -21,14 +22,18 @@ import CameraScreen from "./screens/CameraScreen";
 
 const Stack = createNativeStackNavigator();
 
-// Notification Handler 설정
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: true,
-  }),
-});
+// Notification Handler 설정 - 안전하게 처리
+try {
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: true,
+      shouldSetBadge: true,
+    }),
+  });
+} catch (error) {
+  console.warn("NotificationHandler 설정 실패 (무시됨):", error);
+}
 
 export default function App() {
   const [permissionGranted, setPermissionGranted] = useState(false);
@@ -37,7 +42,7 @@ export default function App() {
   const cameraRef = useRef(null);
   const appState = useRef(AppState.currentState);
 
-  // 알림 권한 요청 및 설정
+  // 알림 권한 요청 및 설정 - 거부해도 앱은 진행, 알림 기능만 비활성화
   const requestNotificationPermission = useCallback(async () => {
     const { status: existingStatus } = await Notifications.getPermissionsAsync();
     let finalStatus = existingStatus;
@@ -48,11 +53,9 @@ export default function App() {
     }
 
     if (finalStatus !== "granted") {
-      Alert.alert(
-        "권한 요청 실패",
-        "알림 권한이 필요하여 알림바 기능이 작동하지 않습니다.",
-        [{ text: "확인", onPress: () => {} }]
-      );
+      // 권한 거부 시에도 앱 진행 허용 (알림 기능만 끔)
+      console.log("알림 권한 거부됨 - 알림 기능 비활성화 상태로 진행");
+      setPermissionGranted(true); // 로딩 화면 해제
       return false;
     }
 
@@ -167,7 +170,7 @@ export default function App() {
       const fileName = `${folderName}_${timestamp}.jpg`;
 
       // 저장 경로: Pictures/TelecomInspection/카테고리/
-      const baseDirectory = `${FileSystem.documentDirectory}${require("./lib/InspectionItems").SAVE_DIRECTORY}`;
+      const baseDirectory = `${FileSystem.documentDirectory}${SAVE_DIRECTORY}`;
       const destPath = `${baseDirectory}/${folderName}/${fileName}`;
 
       // 전체 경로에서 중간 경로 자동 생성 (폴더가 없으면 생성)
