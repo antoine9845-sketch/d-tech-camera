@@ -3,7 +3,7 @@
  * 안드로이드 알림바에서 카메라 촬영 아이콘 제공
  */
 
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import * as Notifications from "expo-notifications";
 
 const NOTIFICATION_ID = "camera-notification";

@@ -1,2 +1,10 @@
-# Exclude from EAS builds
-android_backup/
+node_modules
+.expo
+.expo-shared
+android
+ios
+*.log
+.git
+.vscode
+.DS_Store
+_unused_backup/

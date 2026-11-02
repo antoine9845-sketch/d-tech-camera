@@ -11,8 +11,9 @@ import {
   Text,
   SafeAreaView,
   Image,
+  Alert,
 } from "react-native";
-import { Camera } from "expo-camera";
+import { Camera, CameraView } from "expo-camera";
 import { Ionicons } from "@expo/vector-icons";
 import INSPECTION_ITEMS from "../lib/InspectionItems";
 
@@ -21,6 +22,7 @@ export default function CameraScreen({ route, navigation }) {
   const [previewUri, setPreviewUri] = useState(null);
   const [capturedImage, setCapturedImage] = useState(null);
   const [isCapturing, setIsCapturing] = useState(false);
+  const [cameraReady, setCameraReady] = useState(false);
 
   const cameraRef = useRef(null);
 

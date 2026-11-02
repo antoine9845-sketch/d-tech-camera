@@ -3,8 +3,8 @@
  * 알림바 Persistent Notification, 카메라, 30개 점검 항목 지원
  */
 
-import React, { useEffect, useState, useRef } from "react";
-import { StyleSheet, StatusBar, ActivityIndicator, Alert, View } from "react-native";
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { StyleSheet, StatusBar, ActivityIndicator, Alert, View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -60,8 +60,20 @@ export default function App() {
     return true;
   }, []);
 
-  // 촬영 아이콘 알림 생성
+  // 촬영 아이콘 알림 생성 - 채널 준비 후, 실패 시 팝업 없이 조용히 처리
   const createCameraNotification = useCallback(async () => {
+    // 채널 준비 대기 (최대 2초)
+    const waitForChannel = () => new Promise((resolve) => {
+      const check = setInterval(() => {
+        if (channelReady) {
+          clearInterval(check);
+          resolve();
+        }
+      }, 100);
+      setTimeout(() => { clearInterval(check); resolve(); }, 2000);
+    });
+    await waitForChannel();
+
     const hasPermission = await requestNotificationPermission();
 
     if (hasPermission) {
@@ -75,22 +87,30 @@ export default function App() {
         setHasActiveNotification(true);
         console.log("알림 생성 완료");
       } catch (error) {
-        console.error("알림 생성 실패:", error);
-        Alert.alert("알림 오류", "알림 생성에 실패했습니다.");
+        console.warn("알림 생성 실패 (무시됨):", error);
+        // Alert 제거 - 조용히 실패 처리
       }
     }
-  }, [requestNotificationPermission]);
+  }, [requestNotificationPermission, channelReady]);
 
-  // 알림 채널 등록 (안드로이드 필요)
+  // 알림 채널 등록 (안드로이드 필요) - 안전하게 처리
+  const [channelReady, setChannelReady] = useState(false);
+
   useEffect(() => {
     const registerNotificationChannel = async () => {
-      await Notifications.setNotificationChannelAsync("camera-action", {
-        name: "카메라 촬영",
-        importance: Notifications.AndroidImportance.HIGH,
-        vibrationPattern: [0, 250, 250, 250],
-        lightColor: "#FF0000",
-        showBadge: true,
-      });
+      try {
+        await Notifications.setNotificationChannelAsync("camera-action", {
+          name: "카메라 촬영",
+          importance: Notifications.AndroidImportance.HIGH,
+          vibrationPattern: [0, 250, 250, 250],
+          lightColor: "#FF0000",
+          showBadge: true,
+        });
+        setChannelReady(true);
+      } catch (error) {
+        console.warn("알림 채널 등록 실패 (무시됨):", error);
+        setChannelReady(true); // 채널 실패해도 진행
+      }
     };
     registerNotificationChannel();
   }, []);

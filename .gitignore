@@ -34,3 +34,6 @@ ios/.gradle/
 
 # Splash screen
 .splash-screen/# Android backup (for EAS prebuild)
+
+# Backup folders
+_unused_backup/
